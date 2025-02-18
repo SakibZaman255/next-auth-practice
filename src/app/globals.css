@@ -2,26 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
+/* Keyframes for smooth lighting glow effect */
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  @keyframes lightglow {
+    0%, 100% {
+      color: #0e3742;
+      text-shadow: 0 0 5px #03bcf4, 0 0 10px #03bcf4;
+    }
+    50% {
+      color: #fff;
+      text-shadow: 0 0 15px #03bcf4, 0 0 30px #03bcf4, 0 0 45px #03bcf4;
+    }
+  }
+
+  .animate-lightglow {
+    animation: lightglow 3s infinite ease-in-out;
+  }
+
+  .box-reflect {
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
   }
 }
