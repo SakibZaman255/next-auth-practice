@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+  overflow-x: hidden;
+}
+
 /* Keyframes for smooth lighting glow effect */
 @layer utilities {
   @keyframes lightglow {
@@ -22,4 +26,110 @@
   .box-reflect {
     -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
   }
+
+  @keyframes glitch {
+    0% { transform: translateX(0); opacity: 1; }
+    25% { transform: translateX(-2px); opacity: 0.9; }
+    50% { transform: translateX(2px); opacity: 1; }
+    75% { transform: translateX(-1px); opacity: 0.95; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+
+  .glitch {
+    animation: glitch 1.5s infinite alternate ease-in-out;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.2);
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+  }
+  
+  .animate-shake {
+    animation: shake 0.3s infinite;
+  }
+
+  @keyframes flicker {
+    0%, 100% { opacity: 1; }
+    10% { opacity: 0.6; }
+    50% { opacity: 0.2; }
+    80% { opacity: 0.9; }
+  }
+  
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-flicker {
+    animation: flicker 2s infinite alternate;
+  }
+  
+  .animate-fade {
+    animation: fade-in 1.5s ease-in-out;
+  }
+
+  @keyframes textFade {
+    0% { opacity: 0; transform: translateY(10px); }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-textFade {
+    animation: textFade 2s ease-in-out;
+  }
+
+  
+  @keyframes moveCable {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+  }
+  
+  @keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  .animate-moveCable {
+    animation: moveCable 1.5s infinite ease-in-out;
+  }
+  
+  .animate-zoomIn {
+    animation: zoomIn 1s ease-out;
+  }
+  
+
+  @keyframes dinoRun {
+    0% { transform: scaleX(1); }
+    50% { transform: scaleX(0.9); }
+    100% { transform: scaleX(1); }
+  }
+  
+  @keyframes dinoJump {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-50px); }
+    100% { transform: translateY(0); }
+  }
+  
+  @keyframes cactusMove {
+    0% { right: -10%; }
+    100% { right: 100%; }
+  }
+  
+  .animate-dinoRun {
+    animation: dinoRun 0.3s infinite;
+  }
+  
+  .animate-dinoJump {
+    animation: dinoJump 0.5s ease-out;
+  }
+  
+  .animate-cactusMove {
+    animation: cactusMove 3s linear infinite;
+  }
+  
+  
 }
