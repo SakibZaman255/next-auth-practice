@@ -11,6 +11,7 @@ import LoadingThree from "./components/LoadingThree";
 import LoadingFive from "./components/LoadingFive";
 import LoadingFour from "./components/LoadingFour";
 import LoadingSix from "./components/LoadingSix";
+import GsapForm from "./components/GsapForm";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
     <LoadingFour/>
     <LoadingFive/>
     <LoadingSix/>
+    <GsapForm/>
     
     </>
   );
