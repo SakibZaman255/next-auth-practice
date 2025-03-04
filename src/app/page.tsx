@@ -12,6 +12,8 @@ import LoadingFive from "./components/LoadingFive";
 import LoadingFour from "./components/LoadingFour";
 import LoadingSix from "./components/LoadingSix";
 import GsapForm from "./components/GsapForm";
+import ImageSlider from "./components/ImageSlider";
+import ModernCarousel from "./components/ModernCaraousal";
 
 export default function Home() {
   return (
@@ -29,6 +31,8 @@ export default function Home() {
     <LoadingFive/>
     <LoadingSix/>
     <GsapForm/>
+    <ImageSlider/>
+    <ModernCarousel/>
     
     </>
   );
